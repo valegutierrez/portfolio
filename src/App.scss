@@ -1,0 +1,228 @@
+@import "./styles/breakpoints";
+@import "./styles/mixins";
+
+/* App */
+.app {
+  padding: 85px 0 0;
+}
+
+/* Section */
+.lilac-section {
+  background-color: var(--lilac);
+  width: 100%;
+  @include section-padding;
+}
+
+
+/* Logo */
+.logo {
+  height: 2rem;
+  width: auto;
+}
+
+/* Navbar */
+.hamburger-menu {
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  background-color: var(--light-pink);
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  @include navbar-padding;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.navbar-mobile-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--pink);
+  padding: 2rem;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.navbar-link {
+  font-family: "Playfair", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Window */
+.window {
+  z-index: 2;
+}
+
+.window-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  background-color: var(--pink);
+  color: #000;
+  border-radius: 0.6rem 0.6rem 0 0;
+  border: 2px solid #000;
+}
+
+.window-body {
+  background-color: #FFF;
+  border-radius: 0 0 0.6rem 0.6rem;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  @include window-padding;
+}
+
+.window-body h1 {
+  @include h1-size;
+}
+
+.window-body h2 {
+  @include h2-size;
+}
+
+/* Hero section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100rem;
+  @include p-hero;
+  @include section-padding;
+
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-self: center;
+  }
+}
+
+.hero-image {
+  @include hero-img;
+}
+
+.hero-image.smaller {
+  width: 80%;
+  max-width: 200px;
+  margin: -2rem 0 0 0;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    top: 8rem;
+    margin: 0;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    top: 12rem;
+    max-width: 250px;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    top: 15rem;
+    margin: 0;
+    max-width: 350px;
+  }
+}
+
+.hero-window {
+  margin: 0 -10rem;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    margin: 0 -4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    margin: 0 -6rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    margin: 0 -6rem;
+  }
+}
+
+/* Wave Divider */
+.wave-divider {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.wave {
+  background-image: url("./assets/svg/Wave.svg");
+  background-repeat: repeat-x;
+  background-size: 500px 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes wave {
+  0% {
+  background-position-x: 0%;
+  }
+  100% {
+  background-position-x: -500px;
+  }
+ }
+
+/* Clouds */
+.cloud-container {
+  display: grid;
+  align-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.cloud {
+  width:50%;
+  animation: cloud 5s linear infinite;
+}
+
+.cloud-reverse {
+  width: 50%;
+  animation: cloud 5s linear -2s infinite alternate forwards;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Video */
+.main-video {
+  border-radius: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 25rem;
+  height: 100%;
+}

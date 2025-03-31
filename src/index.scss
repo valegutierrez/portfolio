@@ -1,0 +1,43 @@
+@import "./styles/_breakpoints.scss";
+
+/* Global styles */
+:root {
+  --pink: #fecffb;
+  --light-pink: #fef4ff;
+  --lilac: #e2d0ff;
+  --fuchsia: #b933ff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-pink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair", sans-serif;
+  font-weight: 600;
+}
+
+span {
+  color: var(--fuchsia);
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.nowrap {
+  white-space: nowrap;
+}

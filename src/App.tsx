@@ -1,13 +1,15 @@
-import './App.css'
-import Navbar from './components/Navbar/Navbar'
+import './App.scss'
 import HeroSection from './components/HeroSection/HeroSection'
+import MainSection from './components/MainSection/MainSection'
+import WaveDivider from './components/WaveDivider/WaveDivider'
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <div className="app">
       <HeroSection />
-    </>
+      <WaveDivider />
+      <MainSection />
+    </div>
   )
 }
 

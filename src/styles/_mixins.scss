@@ -1,0 +1,128 @@
+@import "./breakpoints.scss";
+
+/* Typography */
+@mixin h1-size {
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: -0.1rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: -0.1rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: -0.13rem;
+  }
+}
+
+@mixin h2-size {
+  color: var(--fuchsia);
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.05rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: -0.05rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.07rem;
+  }
+}
+
+@mixin p-hero {
+  font-size: 1rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* Padding */
+@mixin navbar-padding {
+  padding: 1.3rem 2rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 1.3rem 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 1.3rem 10rem;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 1.3rem 15rem;
+  }
+}
+
+@mixin section-padding {
+  padding: 1.3rem 2rem 2rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 1.3rem 4rem 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 1.3rem 6rem 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 1.3rem 10rem 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    padding: 1.3rem 15rem 4rem;
+    
+  }
+}
+
+@mixin window-padding {
+  padding: 1rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 2rem;
+  }
+}
+
+/* Images */
+@mixin hero-img {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 -2.5rem 0;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 15rem;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    margin: 0;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    margin: 0;
+    max-width: 300px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    margin: 0;
+    max-width: 400px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    margin: 0;
+    max-width: 450px;
+  }
+}

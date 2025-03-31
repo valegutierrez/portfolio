@@ -1,0 +1,35 @@
+interface CloudProps {
+  isReverse?: boolean;
+}
+
+function Cloud(props: CloudProps) {
+  const { isReverse } = props;
+
+  return (
+    <svg className={isReverse ? `cloud-reverse` : `cloud`} width="108" height="75" viewBox="0 0 108 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_dd_41_54)">
+        <path d="M23.375 28.1667C26.2083 13.7917 38.8333 3 54 3C66.0417 3 76.5 9.83333 81.7083 19.8333C94.25 21.1667 104 31.7917 104 44.6667C104 58.4583 92.7917 69.6667 79 69.6667H24.8333C13.3333 69.6667 4 60.3333 4 48.8333C4 37.8333 12.5417 28.9167 23.375 28.1667Z" fill="white"/>
+      </g>
+      <defs>
+        <filter id="filter0_dd_41_54" x="0" y="0" width="108" height="74.6666" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset dy="1"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_41_54"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="effect2_dropShadow_41_54"/>
+          <feOffset dy="1"/>
+          <feGaussianBlur stdDeviation="1.5"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+          <feBlend mode="normal" in2="effect1_dropShadow_41_54" result="effect2_dropShadow_41_54"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_41_54" result="shape"/>
+        </filter>
+      </defs>
+    </svg>
+  )
+}
+export default Cloud;
