@@ -1,0 +1,55 @@
+@use "./styles/_breakpoints.scss" as *;
+@use "./styles/_mixins.scss" as *;
+
+/* Global styles */
+:root {
+  --pink: #fecffb;
+  --light-pink: #fee2fd;
+  --lighter-pink: #fef4ff;
+  --lilac: #e2d0ff;
+  --light-lilac: #e0c7ff;
+  --fuchsia: #b933ff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--lighter-pink);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include playfair-font;
+}
+
+button {
+  @include playfair-font;
+}
+
+span {
+  color: var(--fuchsia);
+}
+
+.app {
+  padding: 77px 0 0;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 70px 0 0;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}

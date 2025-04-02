@@ -1,0 +1,451 @@
+@use "./styles/breakpoints" as *;
+@use "./styles/mixins" as *;
+
+/* Logo */
+.logo {
+  height: 1.8rem;
+  width: auto;
+}
+
+.logo-footer {
+  width: 10rem;
+  height: auto;
+}
+
+/* Navbar */
+.hamburger-menu {
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  background-color: var(--lighter-pink);
+  z-index: 4;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+
+  @include navfoot-padding;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.navbar-mobile-links {
+  background-color: var(--lighter-pink);
+  z-index: 3;
+  border-bottom: 2px solid #000;
+  display: grid;
+  text-align: center;
+  position: fixed;
+  top: -200px;
+  left: 0;
+  right: 0;
+  list-style-type: none;
+  transition: top .3s ease-in-out;
+}
+
+.navbar-mobile-links.open {
+  top: 77px;
+  transition: top .3s ease-in-out;
+}
+
+.navbar-link {
+  font-family: "Playfair", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: background-color .5s;
+}
+
+.navbar-mobile-links .navbar-link {
+  padding: 1rem;
+}
+
+.navbar-mobile-links .navbar-link:hover {
+  background-color: var(--light-pink);
+}
+
+.navbar-mobile-links.bg-lilac .navbar-link:hover {
+  background-color: var(--light-lilac);
+}
+
+.navbar-link .active {
+  color: var(--fuchsia);
+}
+
+.bg-lilac {
+  transition: background-color .5s;
+  background-color: var(--lilac);
+}
+
+/* Window */
+.window {
+  z-index: 2;
+}
+
+.window-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  background-color: var(--pink);
+  color: #000;
+  border-radius: 0.6rem 0.6rem 0 0;
+  border: 2px solid #000;
+}
+
+.window-body {
+  display: grid;
+  gap: 1rem;
+  background-color: #FFF;
+  border-radius: 0 0 0.6rem 0.6rem;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 1rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 2rem;
+  }
+
+  h2 {
+    color: var(--fuchsia);
+  }
+
+  @include bigger-font-size;
+}
+
+.floating-window {
+  position: relative;
+  top: 0;
+
+  @media screen and (min-width: $breakpoint-md) {
+    top: -5rem;
+  }
+}
+
+/* Hero section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include bigger-p;
+  @include section;
+
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-self: center;
+  }
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 -2.5rem 0;
+  border-radius: 15rem;
+  @include media-size;
+}
+
+.hero-image.smaller {
+  width: 80%;
+  max-width: 200px;
+  margin: -2rem 0 0 0;
+  @include smaller-media-size;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    top: 8rem;
+    margin: 0;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    top: 12rem;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    margin: 0;
+  }
+}
+
+.hero-window {
+  margin: 0;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    margin: 0 -4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    margin: 0 -6rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    margin: 0 -6rem;
+  }
+}
+
+/* Wave Divider */
+.wave-divider {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.wave {
+  background-image: url("./assets/svg/Wave.svg");
+  background-repeat: repeat-x;
+  background-size: 500px 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes wave {
+  0% {
+  background-position-x: 0%;
+  }
+  100% {
+  background-position-x: -500px;
+  }
+}
+
+/* Main Section */
+.lilac-section {
+  background-color: var(--lilac);
+  @include grid;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include section;
+  @include gap;
+
+  @media screen and (min-width: $breakpoint-md) {
+    flex-direction: row;
+  }
+}
+
+.main-section.smaller {
+  max-width: 70rem;
+}
+
+/* Clouds */
+.cloud-container {
+  display: grid;
+  align-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  @include gap;
+}
+
+.cloud {
+  width:50%;
+  animation: cloud 5s linear infinite;
+}
+
+.cloud-reverse {
+  width: 50%;
+  animation: cloud 5s linear -2s infinite alternate forwards;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.col-reverse {
+  align-items: flex-start;
+  padding-bottom: 0;
+
+  @media screen and (max-width: $breakpoint-md) {
+    align-items: center;
+    flex-direction: column-reverse;
+    top: 0;
+  }
+}
+
+/* Video */
+.main-video {
+  border-radius: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include smaller-media-size;
+}
+
+/* Button */
+.button-section {
+  @include grid;
+  @include padding;
+  & {
+    gap: 1rem !important;
+    padding: 0;
+  }
+}
+
+.button{
+  background-color: var(--fuchsia);
+  color: #FFF;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+  }
+
+  &:hover {
+    color: var(--pink);
+    transform: scale(1.02);
+  }
+}
+
+.button.smaller {
+  font-size: 1.3 rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 1.5rem;
+  }
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--fuchsia);
+  border: 4px solid var(--fuchsia);
+
+  &:hover {
+    color: var(--fuchsia);
+    transform: scale(1.02);
+  }
+}
+
+/* Label */
+.label {
+  background-color: var(--pink);
+  border-radius: .5rem;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .3rem;
+}
+
+.labels {
+  display: flex;
+  gap: .5rem;
+}
+
+/* Portfolio */
+.projects-catalog {
+  background-color: var(--lilac);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.project {
+  background-color: var(--lighter-pink);
+  @include gap;
+  @include section;
+  & {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: $breakpoint-lg){
+    flex-direction: row; 
+  }
+}
+
+.project-body {
+  display: grid;
+  gap: .5rem;
+  max-width: 27.5rem;
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.5rem;
+    letter-spacing: -.1rem;
+    font-weight: 500;
+  }
+
+  strong {
+    font-weight: 800;
+  }
+}
+
+.project img {
+  border-radius: .6rem;
+  max-width: 27.5rem;
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: -.05rem;
+  text-align: center;
+  gap: 1rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    align-items: flex-end;
+  }
+
+  @include navfoot-padding;
+}
+
+.footer-sn {
+  display: flex;
+  justify-self: center;
+  gap: .5rem;
+}
+
+.sn-icon {
+  width: 2rem;
+  height: auto;
+}
+
+/* Layout */
+.grid {
+  @include grid;
+  @include gap;
+}
+
+.nogap {
+  @include no-gap;
+}

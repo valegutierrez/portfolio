@@ -1,18 +1,19 @@
 import HeroImage from '../HeroSection/HeroImage'
 import Window from '../Window/Window'
+import HeroImageSmaller from './HeroImageSmaller';
 
 function HeroSection() {
   return (
     <section className="hero-section">
-      <Window 
-        heading={
-          <>
-            ¡Hola! Soy <span>Valentina</span> 🎀
-          </>
-        }
+      <HeroImage />
+      <Window
+        className="hero-window"
+        heading={<>
+          ¡Hola! Soy <span className="nowrap">Valentina &#127872;</span>
+        </>}
         body="Diseñadora UX/UI & desarrolladora front-end."
       />
-      <HeroImage />
+      <HeroImageSmaller />
     </section>
   )
 }

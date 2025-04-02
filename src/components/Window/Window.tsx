@@ -3,12 +3,13 @@ import WindowBody from "./WindowBody";
 import { WindowProps } from "../../types";
 
 function Window(props: WindowProps) {
-  const { heading, body } = props;
+  const { className, heading, subheading, body } = props;
   return (
-    <div className="window">
+    <div className={`window ${className ? className : ''}`}>
       <WindowHeader />
       <WindowBody
         heading={heading}
+        subheading={subheading}
         body={body}
       />
     </div>

@@ -1,0 +1,172 @@
+@use "./breakpoints.scss" as *;
+
+/* Typography */
+@mixin playfair-font {
+  font-family: "Playfair", sans-serif;
+  font-weight: 600;
+}
+
+@mixin bigger-font-size {
+  h1 {  
+    font-size: 2rem;
+    line-height: 2rem;
+    letter-spacing: -0.1rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      & {
+        font-size: 3rem;
+        line-height: 3rem;
+        letter-spacing: -0.1rem;
+      }
+    }
+    
+    @media screen and (min-width: $breakpoint-lg) {
+      & {
+        font-size: 4rem;
+        line-height: 4rem;
+        letter-spacing: -0.13rem;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      & {
+        font-size: 2rem;
+        line-height: 2rem;
+        letter-spacing: -0.05rem;
+      }
+    }
+    @media screen and (min-width: $breakpoint-lg) {
+      & {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: -0.07rem;
+      }
+    }
+  }
+}
+
+@mixin bigger-p {
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+/* Padding */
+@mixin padding {
+  & {
+    padding: 1rem;
+  }
+}
+
+@mixin navfoot-padding {
+  & {
+    padding: 1.3rem 2rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 1.3rem 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 1.3rem 10rem;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 1.3rem 15rem;
+  }
+}
+
+@mixin section {
+  & {
+    max-width: 100rem;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: $breakpoint-sm) {
+    padding: 1.5rem 2rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 1.5rem 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 1.5rem 6rem;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 1.5rem 10rem;
+  }
+}
+
+/* Gap */
+@mixin gap {
+  & {
+    gap: 2rem;
+  }
+}
+
+@mixin no-gap {
+  gap: 2rem;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    gap: 0;
+  }
+}
+
+/* Display */
+@mixin grid {
+  display: grid;
+  justify-content: center;
+  justify-items: stretch;
+  @include gap;
+}
+
+/* Media size */
+@mixin media-size {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    margin: 0;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 300px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: 400px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: 450px;
+  }
+}
+
+@mixin smaller-media-size {
+  width: 80%;
+  max-width: 200px;
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: 250px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: 350px;
+  }
+}
