@@ -9,7 +9,7 @@ function HeroSection() {
       <Window
         className="hero-window"
         heading={<>
-          ¡Hola! Soy <span className="nowrap">Valentina 🎀</span>
+          ¡Hola! Soy <span className="nowrap">Valentina &#127872;</span>
         </>}
         body="Diseñadora UX/UI & desarrolladora front-end."
       />

@@ -5,7 +5,7 @@ import { WindowProps } from "../../types";
 function Window(props: WindowProps) {
   const { className, heading, subheading, body } = props;
   return (
-    <div className={`window ${className}`}>
+    <div className={`window ${className ? className : ''}`}>
       <WindowHeader />
       <WindowBody
         heading={heading}

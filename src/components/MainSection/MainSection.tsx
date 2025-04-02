@@ -1,11 +1,12 @@
+import Button from "../Button/Button";
 import Window from "../Window/Window"
 import Cloud from "./Cloud"
 import MainVideo from "./MainVideo"
 
 function MainSection() {
   return (
-    <div className="lilac-section">
-      <div className="display-flex">
+    <section className="lilac-section nogap">
+      <div id="about-me" className="main-section smaller">
         <Window
           subheading="Acerca de mí"
           body={<>
@@ -20,14 +21,23 @@ function MainSection() {
           <Cloud isReverse />
         </div>
       </div>
-      <div className="display-flex">
+      <div className="main-section smaller col-reverse">
         <MainVideo />
-        <Window
-          subheading="Actualmente..."
-          body="Busco nuevos desafíos donde amplíe mis conocimientos como Diseñadora UX/UI o desarrolladora front-end y poder dedicarme a ello de manera full time. (｡•̀ᴗ-)✧"
-        />
+        <div className="grid floating-window">
+          <Window
+            subheading="Actualmente..."
+            body={<>
+              Busco nuevos desafíos donde amplíe mis conocimientos como Diseñadora UX/UI o desarrolladora front-end y poder dedicarme a ello de manera full time.
+              <span className="nowrap">(｡•̀ᴗ-)✧˖°</span>
+            </>}
+          />
+          <div className="button-section">
+            <Button url="/portfolio" label="Ir a mi portafolio &#128187;"/>
+            <Button url="https://drive.google.com/file/d/1r-_qHUapy496Qd9Yv7BSUzFtcHJDIrsR/view" label="Descargar CV" secondary/>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

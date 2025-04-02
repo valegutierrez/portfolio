@@ -1,59 +1,80 @@
-@import "./breakpoints.scss";
+@use "./breakpoints.scss" as *;
 
 /* Typography */
-@mixin h1-size {
-  font-size: 2rem;
-  line-height: 2rem;
-  letter-spacing: -0.1rem;
-
-  @media screen and (min-width: $breakpoint-md) {
-    font-size: 3rem;
-    line-height: 3rem;
-    letter-spacing: -0.1rem;
-  }
-
-  @media screen and (min-width: $breakpoint-lg) {
-    font-size: 4rem;
-    line-height: 4rem;
-    letter-spacing: -0.13rem;
-  }
+@mixin playfair-font {
+  font-family: "Playfair", sans-serif;
+  font-weight: 600;
 }
 
-@mixin h2-size {
-  color: var(--fuchsia);
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  letter-spacing: -0.05rem;
-
-  @media screen and (min-width: $breakpoint-md) {
+@mixin bigger-font-size {
+  h1 {  
     font-size: 2rem;
     line-height: 2rem;
-    letter-spacing: -0.05rem;
+    letter-spacing: -0.1rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      & {
+        font-size: 3rem;
+        line-height: 3rem;
+        letter-spacing: -0.1rem;
+      }
+    }
+    
+    @media screen and (min-width: $breakpoint-lg) {
+      & {
+        font-size: 4rem;
+        line-height: 4rem;
+        letter-spacing: -0.13rem;
+      }
+    }
   }
 
-  @media screen and (min-width: $breakpoint-lg) {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    letter-spacing: -0.07rem;
+  h2 {
+    font-size: 1.5rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      & {
+        font-size: 2rem;
+        line-height: 2rem;
+        letter-spacing: -0.05rem;
+      }
+    }
+    @media screen and (min-width: $breakpoint-lg) {
+      & {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: -0.07rem;
+      }
+    }
   }
 }
 
-@mixin p-hero {
-  font-size: 1rem;
+@mixin bigger-p {
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
 
-  @media screen and (min-width: $breakpoint-md) {
-    font-size: 1.2rem;
-  }
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 1.2rem;
+    }
 
-  @media screen and (min-width: $breakpoint-lg) {
-    font-size: 1.3rem;
+    @media screen and (min-width: $breakpoint-lg) {
+      font-size: 1.3rem;
+    }
   }
 }
-
 
 /* Padding */
-@mixin navbar-padding {
-  padding: 1.3rem 2rem;
+@mixin padding {
+  & {
+    padding: 1rem;
+  }
+}
+
+@mixin navfoot-padding {
+  & {
+    padding: 1.3rem 2rem;
+  }
 
   @media screen and (min-width: $breakpoint-md) {
     padding: 1.3rem 4rem;
@@ -68,61 +89,84 @@
   }
 }
 
-@mixin section-padding {
-  padding: 1.3rem 2rem 2rem;
+@mixin section {
+  & {
+    max-width: 100rem;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: $breakpoint-sm) {
+    padding: 1.5rem 2rem;
+  }
 
   @media screen and (min-width: $breakpoint-md) {
-    padding: 1.3rem 4rem 4rem;
+    padding: 1.5rem 4rem;
   }
 
   @media screen and (min-width: $breakpoint-lg) {
-    padding: 1.3rem 6rem 4rem;
+    padding: 1.5rem 6rem;
   }
 
   @media screen and (min-width: $breakpoint-xl) {
-    padding: 1.3rem 10rem 4rem;
-  }
-
-  @media screen and (min-width: $breakpoint-xxl) {
-    padding: 1.3rem 15rem 4rem;
-    
+    padding: 1.5rem 10rem;
   }
 }
 
-@mixin window-padding {
-  padding: 1rem;
-
-  @media screen and (min-width: $breakpoint-md) {
-    padding: 2rem;
+/* Gap */
+@mixin gap {
+  & {
+    gap: 2rem;
   }
 }
 
-/* Images */
-@mixin hero-img {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 -2.5rem 0;
+@mixin no-gap {
+  gap: 2rem;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    gap: 0;
+  }
+}
+
+/* Display */
+@mixin grid {
+  display: grid;
+  justify-content: center;
+  justify-items: stretch;
+  @include gap;
+}
+
+/* Media size */
+@mixin media-size {
   width: 100%;
   max-width: 250px;
   height: auto;
-  border-radius: 15rem;
 
   @media screen and (min-width: $breakpoint-sm) {
     margin: 0;
   }
 
   @media (min-width: $breakpoint-md) {
-    margin: 0;
     max-width: 300px;
   }
 
   @media (min-width: $breakpoint-lg) {
-    margin: 0;
     max-width: 400px;
   }
 
   @media (min-width: $breakpoint-xl) {
-    margin: 0;
     max-width: 450px;
+  }
+}
+
+@mixin smaller-media-size {
+  width: 80%;
+  max-width: 200px;
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: 250px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: 350px;
   }
 }
