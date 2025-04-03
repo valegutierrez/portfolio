@@ -42,7 +42,7 @@ function Navbar(props: NavbarProps) {
           <ul className="navbar-links">
             <li className="navbar-link"><NavLink className={({ isActive }) => ( isActive ? "active" : "")} to="/#about-me">Acerca de mí</NavLink></li>
             <li className="navbar-link"><NavLink className={({ isActive }) => ( isActive ? "active" : "")} to="/portfolio">Portafolio</NavLink></li>
-            <li className="navbar-link">Contacto</li>
+            <li className="navbar-link"><NavLink className={({ isActive }) => ( isActive ? "active" : "")} to="/contact">Contacto</NavLink></li>
           </ul>
         : 
           <i className={`hamburger-menu ri-${isMenuOpen ? "close-large" : "menu"}-line`} onClick={handleMenuToggle}></i>
@@ -51,7 +51,7 @@ function Navbar(props: NavbarProps) {
       <ul className={`navbar-mobile-links ${scroll || secondary ? "bg-lilac" : ""} ${isMenuOpen ? "open" : ""}`}>
         <li className="navbar-link"><NavLink className={({ isActive }) => ( isActive ? "active" : "")} to="/#about-me">Acerca de mí</NavLink></li>
         <li className="navbar-link"><NavLink className={({ isActive }) => ( isActive ? "active" : "")} to="/portfolio">Portafolio</NavLink></li>
-        <li className="navbar-link">Contacto</li>
+        <li className="navbar-link"><NavLink className={({ isActive }) => ( isActive ? "active" : "")} to="/contact">Contacto</NavLink></li>
       </ul>
     </>
   )

@@ -8,6 +8,7 @@ import Home from './pages/Home.tsx'
 import Portfolio from './pages/Portfolio/Portfolio.tsx'
 import PortfolioHome from './pages/Portfolio/Home.tsx'
 import Project1 from './pages/Portfolio/Project1.tsx'
+import Contact from './pages/Contact.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
           <Route index element={<PortfolioHome />}></Route>
           <Route path="project-1" element={<Project1 />}></Route>
         </Route>
+        <Route path="contact" element={<Contact />}></Route>
       </Routes>
     </StrictMode>
   </BrowserRouter>
