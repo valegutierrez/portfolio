@@ -8,6 +8,8 @@
 }
 
 .logo-footer {
+  display: flex;
+  justify-self: center;
   width: 10rem;
   height: auto;
 }
@@ -231,6 +233,7 @@
 .main-section {
   display: flex;
   justify-content: center;
+  justify-self: center;
   align-items: center;
   flex-direction: column;
   @include section;
@@ -294,7 +297,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include smaller-media-size;
+  width: 80%;
+  max-width: 250px;
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: 350px;
+  }
 }
 
 /* Button */
@@ -372,7 +380,7 @@
 }
 
 .project {
-  background-color: var(--lighter-pink);
+  background-color: #FFF;
   @include gap;
   @include section;
   & {
@@ -385,6 +393,12 @@
 
   @media screen and (min-width: $breakpoint-lg){
     flex-direction: row; 
+  }
+}
+
+.project.reverse {
+  @media screen and (min-width: $breakpoint-lg){
+    flex-direction: row-reverse; 
   }
 }
 
@@ -438,6 +452,12 @@
 .sn-icon {
   width: 2rem;
   height: auto;
+}
+
+.small-name {
+  font-size: .8rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* Layout */

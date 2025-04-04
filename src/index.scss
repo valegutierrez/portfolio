@@ -50,6 +50,11 @@ span {
   }
 }
 
+.app.gap {
+  display: grid;
+  gap: 1rem;
+}
+
 .nowrap {
   white-space: nowrap;
 }

@@ -1,4 +1,4 @@
-import Window from "../../Window/Window";
+import Window from "../Window/Window";
 
 function PortfolioHero() {
   return (

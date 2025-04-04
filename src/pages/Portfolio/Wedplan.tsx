@@ -2,7 +2,7 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 import MainSection from "../../components/MainSection/MainSection";
 import WaveDivider from "../../components/WaveDivider/WaveDivider";
 
-function Project1() {
+function Wedplan() {
   return (
     <>
       <HeroSection />
@@ -11,4 +11,4 @@ function Project1() {
     </>
   )
 }
-export default Project1;
+export default Wedplan;
