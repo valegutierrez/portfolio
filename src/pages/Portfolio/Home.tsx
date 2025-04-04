@@ -1,5 +1,5 @@
-import PortfolioHero from "../../components/Button/PortfolioSection/PortfolioHero";
-import Projects from "../../components/Button/PortfolioSection/Projects";
+import PortfolioHero from "../../components/PortfolioSection/PortfolioHero";
+import Projects from "../../components/PortfolioSection/Projects";
 
 function PortfolioHome() {
   return (

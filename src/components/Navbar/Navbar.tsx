@@ -37,7 +37,7 @@ function Navbar(props: NavbarProps) {
   return (
     <>
       <nav className={`navbar ${scroll || secondary ? "bg-lilac" : ""}`}>
-        <img src={Logo} className="logo" />
+        <NavLink to="/"><img src={Logo} className="logo" /></NavLink>
         {isLargeViewport ?
           <ul className="navbar-links">
             <li className="navbar-link"><NavLink className={({ isActive }) => ( isActive ? "active" : "")} to="/#about-me">Acerca de mí</NavLink></li>

@@ -1,5 +1,5 @@
+import LogoFooter from "../Footer/LogoFooter";
 import SocialNetworkIcons from "../SocialNetworkIcons/SocialNetworkIcons";
-import Logo from "../../../public/vux.svg"
 import Window from "../Window/Window"
 
 function ContactSection() {
@@ -21,8 +21,7 @@ function ContactSection() {
             <span><strong><u>vale.gutierrezc@gmail.com</u></strong></span>
             <br /><br />
             <SocialNetworkIcons fuschia />
-            <p className="small-name">Valentina Gutiérrez 2025©</p>
-            <img src={Logo} className="logo-footer"/>
+            <LogoFooter />
           </>}
         />
       </section>

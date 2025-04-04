@@ -380,7 +380,7 @@
 }
 
 .project {
-  background-color: var(--lighter-pink);
+  background-color: #FFF;
   @include gap;
   @include section;
   & {
@@ -393,6 +393,12 @@
 
   @media screen and (min-width: $breakpoint-lg){
     flex-direction: row; 
+  }
+}
+
+.project.reverse {
+  @media screen and (min-width: $breakpoint-lg){
+    flex-direction: row-reverse; 
   }
 }
 
