@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Logo from "../../../public/logo vale ux.svg"
+import Logo from "../../assets/svg/logo vale ux.svg"
 import { NavLink } from "react-router-dom";
 
 interface NavbarProps {

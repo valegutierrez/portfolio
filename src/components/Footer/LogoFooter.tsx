@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Logo from "../../../public/vux.svg"
+import Logo from "../../assets/svg/vux.svg"
 
 function LogoFooter() {
   return (
