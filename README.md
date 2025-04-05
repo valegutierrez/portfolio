@@ -25,5 +25,3 @@ This portfolio is designed to give potential employers and clients an overview o
 ##
 
 Thank you for visiting my portfolio! Feel free to explore and reach out for any collaboration opportunities.
-
-<img src="public/logo%20vale%20ux.svg" width="200"/>
