@@ -8,11 +8,11 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div className="app">
+      <main className="app">
         <HeroSection />
         <WaveDivider />
         <MainSection />
-      </div>
+      </main>
       <Footer />
     </>
   )

@@ -8,6 +8,7 @@ import Home from './pages/Home.tsx'
 import Portfolio from './pages/Portfolio/Portfolio.tsx'
 import PortfolioHome from './pages/Portfolio/Home.tsx'
 import Wedplan from './pages/Portfolio/Wedplan.tsx'
+import Pori from './pages/Portfolio/Pori.tsx'
 import Contact from './pages/Contact.tsx'
 
 const titles = [
@@ -40,6 +41,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="portfolio" element={<Portfolio />}>
             <Route index element={<PortfolioHome />}></Route>
             <Route path="wedplan" element={<Wedplan />}></Route>
+            <Route path="pori" element={<Pori />}></Route>
           </Route>
           <Route path="contact" element={<Contact />}></Route>
         </Routes>

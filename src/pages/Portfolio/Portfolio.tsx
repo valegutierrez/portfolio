@@ -6,9 +6,9 @@ function Portfolio() {
   return (
     <>
       <Navbar secondary />
-      <div className="app">
+      <main className="app bg-white">
         <Outlet />
-      </div>
+      </main>
       <Footer />
     </>
   )

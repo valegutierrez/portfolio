@@ -7,9 +7,13 @@ function PortfolioHero() {
         <Window
           heading={<span>Portafolio</span>}
           body={<>
-          Aquí podrán encontrar trabajos desde Diseño UX/UI, diseño de sitios web, desarrollo front-end e ilustraciones.
-          <br /><br />
-          ☆*:.｡.⸜(*ˊ◡ˋ*)⸝.｡.:*☆ <strong>WORK IN PROGRESS</strong>
+            <p>
+              Aquí podrán encontrar trabajos desde Diseño UX/UI, diseño de sitios web, desarrollo front-end e ilustraciones.
+            </p>
+            <br />
+            <p>
+              ☆*:.｡.⸜(*ˊ◡ˋ*)⸝.｡.:*☆ <strong>WORK IN PROGRESS</strong>
+            </p>
           </>}
         />
       </div>

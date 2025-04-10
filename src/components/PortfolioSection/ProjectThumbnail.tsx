@@ -2,8 +2,8 @@ import Label from "../Label/Label";
 import Button from "../Button/Button";
 import { ProjectThumbnailProps } from "../../types";
 
-function Project(props: ProjectThumbnailProps) {
-  const { reverse, yearLabel, heading, subheading, description, image, link, UXLabel, frontEndLabel, other } = props;
+function ProjectThumbnail(props: ProjectThumbnailProps) {
+  const { reverse, yearLabel, heading, subheading, description, image, link, targetBlank, buttonLabel, UXLabel, frontEndLabel, other } = props;
   return (
     <div className={`project ${reverse ? "reverse" : ""}`}>
       <>
@@ -11,16 +11,16 @@ function Project(props: ProjectThumbnailProps) {
         <div className="project-body">
           <div className="labels">
             <Label label={yearLabel}/>
-            {UXLabel ? <Label label="UX Design"/> : ""}
-            {frontEndLabel ? <Label label="Front-end development"/> : ""}
-            {other ? <Label label="Other"/> : ""}
+            {UXLabel ? <Label label="UX Design" secondary/> : ""}
+            {frontEndLabel ? <Label label="Front-end development" secondary/> : ""}
+            {other ? <Label label="Other" secondary/> : ""}
           </div>
           <h2><strong>{heading}</strong> ― {subheading}</h2>
           <p>{description}</p>
-          <Button url={link} label="Ver más &#128269;" smaller/>
+          <Button url={link} label={buttonLabel} targetBlank={targetBlank}/>
         </div>
       </>
     </div>
   )
 }
-export default Project;
+export default ProjectThumbnail;

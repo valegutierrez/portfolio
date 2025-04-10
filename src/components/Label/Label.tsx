@@ -1,12 +1,13 @@
 interface LabelProps {
   label: string;
+  secondary?: boolean;
 }
 
 function Label(props: LabelProps) {
-  const { label } = props;
+  const { label, secondary } = props;
 
   return (
-    <div className="label">
+    <div className={`label ${secondary ? "secondary" : ""}`}>
       <p>{label}</p>
     </div>
   )

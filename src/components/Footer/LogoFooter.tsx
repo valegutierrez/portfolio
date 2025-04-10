@@ -5,7 +5,7 @@ function LogoFooter() {
   return (
     <NavLink to="/">
       <img src={Logo} className="logo-footer"/>
-      <p className="small-name">Valentina Gutiérrez 2025©</p>
+      <p className="small-name">Valentina Gutiérrez 2025 ©</p>
     </NavLink>
   )
 }

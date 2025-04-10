@@ -5,9 +5,9 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <div className="app gap">
+      <main className="app gap">
         <ContactSection />
-      </div>
+      </main>
     </>
   )
 }

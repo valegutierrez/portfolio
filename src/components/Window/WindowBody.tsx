@@ -10,7 +10,7 @@ function WindowBody(props: WindowProps) {
       {subheading &&
         <h2>{subheading}</h2>
       }
-      <p>{body}</p>
+      <div>{body}</div>
     </div>
   );
 }

@@ -11,7 +11,9 @@ function HeroSection() {
         heading={<>
           ¡Hola! Soy <span className="nowrap">Valentina &#127872;</span>
         </>}
-        body="Diseñadora UX/UI & desarrolladora front-end."
+        body={<p>
+          Diseñadora UX/UI & desarrolladora front-end.
+        </p>}
       />
       <HeroImageSmaller />
     </section>

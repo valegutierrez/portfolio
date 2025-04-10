@@ -27,11 +27,18 @@
   display: flex;
   width: 100%;
   position: fixed;
-  justify-content: space-between;
-  align-items: center;
   color: #000;
 
   @include navfoot-padding;
+}
+
+.navbar-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  max-width: 100rem;
 }
 
 .navbar-links {
@@ -82,11 +89,21 @@
 
 .navbar-link .active {
   color: var(--fuchsia);
+  text-decoration: underline;
 }
 
 .bg-lilac {
   transition: background-color .5s;
   background-color: var(--lilac);
+}
+
+.bg-lilac .navbar-link {
+  color: var(--grape);
+}
+
+.bg-lilac .navbar-link .active {
+  color: #000;
+  text-decoration: underline;
 }
 
 /* Window */
@@ -308,7 +325,6 @@
 /* Button */
 .button-section {
   @include grid;
-  @include padding;
   & {
     gap: 1rem !important;
     padding: 0;
@@ -318,31 +334,23 @@
 .button{
   background-color: var(--fuchsia);
   color: #FFF;
-  padding: 0.6rem 1.5rem;
+  padding: .6rem 1.5rem;
   border: none;
   border-radius: 2rem;
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 600;
   text-align: center;
   cursor: pointer;
   transition: all .3s ease-in-out;
 
   @media screen and (min-width: $breakpoint-md) {
-    font-size: 2rem;
-    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    padding: .5rem 2rem;
   }
 
   &:hover {
     color: var(--pink);
     transform: scale(1.02);
-  }
-}
-
-.button.smaller {
-  font-size: 1.3 rem;
-
-  @media screen and (min-width: $breakpoint-md) {
-    font-size: 1.5rem;
   }
 }
 
@@ -357,13 +365,35 @@
   }
 }
 
+.return-button {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    left: 2rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    left: 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    left: 2rem;
+  }
+}
+
 /* Label */
 .label {
   background-color: var(--pink);
-  border-radius: .5rem;
+  border-radius: 2rem;
   font-size: .8rem;
   font-weight: 600;
-  padding: .3rem;
+  padding: .3rem .6rem;
+}
+
+.label.secondary {
+  background-color: var(--light-lilac);
 }
 
 .labels {
@@ -407,15 +437,12 @@
   gap: .5rem;
   max-width: 27.5rem;
 
-  h2 {
-    font-size: 2rem;
-    line-height: 1.5rem;
-    letter-spacing: -.1rem;
-    font-weight: 500;
-  }
-
   strong {
     font-weight: 800;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    gap: 1rem;
   }
 }
 
@@ -423,6 +450,148 @@
   border-radius: .6rem;
   max-width: 27.5rem;
   width: 100%;
+}
+
+/* Project Page */
+.project-cover {
+  background-color: var(--lilac);
+  background-size: cover;
+  text-align: center;
+  background-blend-mode: luminosity;
+  @include bigger-font-size;
+}
+
+.wedplan-img {
+  background-position: bottom;
+  background-image: url("./assets/img/cover/wedplan-cover.png");
+}
+
+.illustration-img {
+  background-position: top;
+  background-image: url("./assets/img/cover/ilustracion-cover.png");
+}
+
+.project-cover-content {
+  padding: 78px 0;
+  position: relative;
+  max-width: 60rem;
+  margin: auto;
+  text-shadow: 2px 2px 0 #FFF;
+}
+
+.project-section {
+  display: grid;
+  @include gap;
+}
+
+.summary {
+  max-width: 22.5rem;
+}
+
+.summary-subtitle {
+  font-weight: 500;
+}
+
+.phones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.phone-img {
+  width: 8rem;
+  height: auto;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    width: 10rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    width: 13rem;
+  }
+}
+
+.phone-img.up {
+  position: relative;
+  top: -1rem;
+  left: -3rem;
+}
+
+.phone-img.down {
+  position: relative;
+  bottom: -1rem;
+  right: -3rem;
+  z-index: 3;
+}
+
+.padding-left {
+  padding-left: 1.3rem;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding-left: 1.6rem;
+  }
+}
+
+.overview {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: row;
+  max-width: 56.25rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    align-items: flex-start;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.overview-section {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+
+  i {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+}
+
+.overview-title {
+  display: grid;
+  justify-items: center;
+  gap: .5rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.select-prototype {
+  border-radius: 0.6rem;
+  padding:  .2rem .5rem;
+  cursor: pointer;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    width: 8rem;
+  }
+}
+
+.figma-embed {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 70vh;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-md) {
+    width: auto;
+  }
 }
 
 /* Footer */
@@ -464,6 +633,10 @@
 .grid {
   @include grid;
   @include gap;
+}
+
+.row {
+  flex-direction: column;
 }
 
 .nogap {

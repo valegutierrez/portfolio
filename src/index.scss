@@ -9,6 +9,7 @@
   --lilac: #e2d0ff;
   --light-lilac: #e0c7ff;
   --fuchsia: #b933ff;
+  --grape: #6b1bb1;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -34,8 +35,18 @@ h1, h2, h3, h4, h5, h6 {
   @include playfair-font;
 }
 
+h2 {
+  font-size: 2rem;
+  line-height: 1.5rem;
+  letter-spacing: -.1rem;
+}
+
 button {
-  @include playfair-font;
+  @include poppins-font;
+}
+
+select {
+  @include poppins-font;
 }
 
 span {
@@ -46,7 +57,11 @@ span {
   padding: 77px 0 0;
 
   @media screen and (min-width: $breakpoint-md) {
-    padding: 70px 0 0;
+    padding: 75px 0 0;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 74px 0 0;
   }
 }
 
@@ -57,4 +72,12 @@ span {
 
 .nowrap {
   white-space: nowrap;
+}
+
+.bg-white {
+  background-color: #FFF !important;
+}
+
+.fuchsia {
+  color: var(--fuchsia)
 }
