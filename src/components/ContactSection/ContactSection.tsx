@@ -23,6 +23,7 @@ function ContactSection() {
             <SocialNetworkIcons fuschia />
             <LogoFooter />
           </>}
+          centered
         />
       </section>
     </>

@@ -1,11 +1,25 @@
-export interface WindowProps {
+import { Dispatch, SetStateAction } from "react";
+
+export type option = {
+  label: string;
+  body: React.ReactNode;
+}
+
+export type WindowProps = {
   className?: string;
   heading?: string | React.ReactNode;
   subheading?: string | React.ReactNode;
   body: React.ReactNode;
+  centered?: boolean;
 };
 
-export interface ProjectThumbnailProps {
+export type WindowTabsProps = {
+  activeTab: string;
+  setActiveTab: Dispatch<SetStateAction<string>>;
+  options: option[];
+}
+
+export type ProjectThumbnailProps = {
   yearLabel: string;
   heading: string;
   subheading: string;
@@ -20,7 +34,7 @@ export interface ProjectThumbnailProps {
   other?: boolean;
 }
 
-export interface ProjectProps {
+export type ProjectProps = {
   wedplan?: boolean;
   pori?: boolean;
   heading: string;

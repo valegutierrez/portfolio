@@ -1,15 +1,30 @@
 import ProjectCover from "../../components/Project/ProjectCover"
 import Window from "../../components/Window/Window"
-import PhoneImg from "../../assets/img/wedplan-phone.png"
-import PhoneImg2 from "../../assets/img/wedplan-phone2.png"
-import { useState } from "react";
-
+import Ignacio from "../../assets/img/wedplan/ignacio-persona.png"
+import Laura from "../../assets/img/wedplan/laura-persona.png"
+import PhoneImg from "../../assets/img/wedplan/wedplan-phone.png"
+import PhoneImg2 from "../../assets/img/wedplan/wedplan-phone2.png"
+import StyleGuide from "../../assets/img/wedplan/wedplan-style-guide.png"
+import { ChangeEvent, useState } from "react";
+import WindowTabs from "../../components/WindowTabs/WindowTabs"
 
 function Wedplan() {
   const [prototype, setPrototype] = useState("high-fi");
-  const handlePrototypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handlePrototypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setPrototype(event.target.value);
   };
+
+  const [activeTab, setActiveTab] = useState("Laura");
+  const personas = [
+    {
+      label: "Laura",
+      body: <img className="full-img" src={Laura} />
+    },
+    {
+      label: "Ignacio",
+      body: <img className="full-img" src={Ignacio} />
+    }
+  ]
 
   return (
     <>
@@ -82,6 +97,18 @@ function Wedplan() {
               </p>
             </div>
           </div>
+        </div>
+        <div className="main-section row">
+          <h2 className="fuchsia">User personas</h2>
+          <WindowTabs
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            options={personas}
+          />
+        </div>
+        <div className="main-section row">
+          <h2 className="fuchsia">Guía de estilo</h2>
+          <img className="full-img" src={StyleGuide} />
         </div>
         <div className="main-section row">
           <h2 className="fuchsia">Prototipo</h2>
